@@ -1,6 +1,8 @@
 package chilru
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestLru_Add(t *testing.T) {
 	lru := New[string, int](2)

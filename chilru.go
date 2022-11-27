@@ -69,7 +69,7 @@ func (lru *Lru[K, V]) Get(k K) (V, bool) {
 	lru.lock.RLock()
 	it, ok := lru.items[k]
 	if ok {
-		lru.list.PushFront(it)
+		lru.list.MoveToFront(it)
 	}
 	return it.Value.(item[K, V]).v, ok
 }
